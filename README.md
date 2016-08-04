@@ -1,6 +1,6 @@
 # veact
 
-Veact is an opinionated library that makes it nice to build React components using a stripped-down Javascript API.
+Veact is an opinionated library for building React components using a plain Javascript API.
 
 ## Example
 
@@ -10,8 +10,7 @@ const OtherComponent = require('./other-component')
 
 const view = veact()
 
-// Extract React.DOM wrapped elements and React components for
-// a nice DOM building API
+// Extract React.DOM wrapped elements and React component class/functions for a nice DOM building API
 const { div, h1, othercomponent } = view.els({
   othercomponent: OtherComponent
 })
@@ -28,13 +27,12 @@ view.styles({
 view.render((props, ctx) =>
   div(                      // Flexible API for omitting props
 
-    h1('.header'),          // Dot notation access to styles object for
-                            // automatic inline styling
+    h1('.header'),          // Dot notation access to styles object for a convenient way to inline style
 
     div('Some body text'),  // Strings without leading dots are inner text
     div(
-      othercomponent(),     // Or pass in child elements/components
-      div('other div')))
+      othercomponent(),     // 
+      div({ some: 'props' }, 'some text')))
 )
 
 // Finally export the component class (or stateless function
