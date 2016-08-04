@@ -46,7 +46,7 @@ const MyComponent = view()
 
 JSX or Hyperscript or Template Strings, Decorators or Mixins, Classes or Stateless Functional Components, JSS or BEM or CSS modules... oh my!
 
-There's a wonderful plethora of ideas and options for writing React components today. Veact is an attempt at eliminating deciscion fatigue by taking an opinionated stance that encourages using the minimal set of programming features to accomplish writing React components. For instance, instead of having to write [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) differently than class-based components—Veact takes a stand and says "no classes", "no `this`" only a single `view.render(() => ReactElements)` API that automatically determines if it should be stateless or not based on how you built it with other `view` APIs.
+There's a wonderful plethora of ways to write React components today. Veact is an opinionated approach that encourages using a minimal set of programming features. For instance, instead of having to write [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) differently than class-based components—Veact says "no classes", "no `this`" only a single `view.render(() => ReactElements)` API that automatically determines if it should be stateless or not based on how you built it with other `view` APIs.
 
 So with that said, here's a quick Veact manifesto of sorts:
 
