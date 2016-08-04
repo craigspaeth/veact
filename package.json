@@ -1,0 +1,39 @@
+{
+  "name": "veact",
+  "version": "0.0.1",
+  "description": "An un-fancy way to build React views",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "example": "browserify example/client.js > example/bundle.js && open example/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigspaeth/veact.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "view",
+    "javascript-api"
+  ],
+  "author": "Craig Spaeth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craigspaeth/veact/issues"
+  },
+  "homepage": "https://github.com/craigspaeth/veact#readme",
+  "dependencies": {
+    "lodash": "^4.14.1"
+  },
+  "peerDependencies": {
+    "react": "^15.3.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "mocha": "^3.0.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "standard": "^7.1.2"
+  }
+}
