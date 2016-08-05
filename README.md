@@ -31,7 +31,7 @@ view.render((props, ctx) =>
 
     div('Some body text'),  // Strings without leading dots are inner text
     div(
-      othercomponent(),     // Wow. Much consistent. JS Syntax highlighted functions 
+      othercomponent(),     // Wow. Much consistent. JS syntax highlighted functions 
       div({ some: 'props' }, 'some text')))
 )
 
