@@ -10,13 +10,13 @@ const OtherComponent = require('./other-component')
 
 const view = veact()
 
-// Get these things out of the way (to be implemented)
-view.use(SomeDecorator, OrMixin, OrSomething)
-
 // Extract React.DOM wrapped elements and React component class/functions for a nice DOM building API
 const { div, h1, othercomponent } = view.els({
   othercomponent: OtherComponent
 })
+
+// Get these things out of the way (to be implemented)
+view.use(SomeDecorator, OrMixin, OrSomething)
 
 // Declare an inline styles object (note `h1('.header')` below)
 view.styles({
