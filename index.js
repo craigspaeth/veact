@@ -64,7 +64,8 @@ module.exports = () => {
   api.els = (klasses = {}) => {
     const dom = mapValues(React.DOM, (tag) => (...args) => {
       const { props: _props, els, styleProp } = elAPI(...args)
-      const style = assign({}, get(styles, styleProp), _props.style)
+      const key = styleProp && styleProp.replace && styleProp.replace(/^\./, '')
+      const style = assign({}, get(styles, key), _props.style)
       const props = assign({}, _props, { style })
       return tag(props, (isEmpty(els) ? null : els))
     })
