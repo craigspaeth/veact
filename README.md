@@ -19,7 +19,7 @@ const { div, h1, othercomponent } = view.els({
 view.use(SomeDecorator, OrMixin, OrSomething)
 
 // Lifecycle methods (turns into stateful class-based component)
-view.on('componentDidUpdate, (component) => {
+view.on('componentDidUpdate', (component) => {
   console.log(component.refs.txt)
 })
 
