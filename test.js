@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 const veact = require('./')
 const React = require('react')
+const sinon = require('sinon')
 const { renderToString } = require('react-dom/server')
 
 const view = veact()
@@ -31,5 +32,12 @@ describe('veact', () => {
     view.render(() => div([div('foo'), div('bar')]))
     render().should.containEql('foo')
     render().should.containEql('bar')
+  })
+
+  it('converts to stateful when using lifecycle methods', () => {
+    const callback = sinon.spy()
+    view.on('componentDidUpdate', callback)
+    view().prototype.componentDidUpdate()
+    callback.called.should.be.ok()
   })
 })

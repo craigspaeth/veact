@@ -18,6 +18,11 @@ const { div, h1, othercomponent } = view.els({
 // Get these things out of the way (to be implemented)
 view.use(SomeDecorator, OrMixin, OrSomething)
 
+// Lifecycle methods (turns into stateful class-based component)
+view.on('componentDidUpdate, (component) => {
+  console.log(component.refs.txt)
+})
+
 // Declare an inline styles object (note `h1('.header')` below)
 view.styles({
   header: {
@@ -34,8 +39,8 @@ view.render((props, ctx) =>
 
     div('Some body text'),  // Strings without leading dots are inner text
     div(
-      othercomponent(),     // Wow. Much consistent. JS syntax highlighted functions 
-      div({ some: 'props' }, 'some text')))
+      othercomponent(),     // Wow. Much consistent. JS syntax highlighted functions
+      div({ some: 'props', ref: 'txt' }, 'some text')))
 )
 
 // Finally export the component class (or stateless function

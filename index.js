@@ -45,10 +45,17 @@ module.exports = () => {
   let render = () => {}
   let styles = {}
   let decorators = []
+  const lifecycleMethods = {}
 
   const api = () => {
     // Stateless functional component
-    return flow(decorators)((...args) => render(...args))
+    if (isEmpty(lifecycleMethods)) {
+      return flow(decorators)((...args) => render(...args))
+    } else {
+      return flow(decorators)(React.createClass(assign(lifecycleMethods, {
+        render: () => render(this.props, this.context)
+      })))
+    }
   }
 
   // Hoist the component render method/function
@@ -56,6 +63,11 @@ module.exports = () => {
 
   // Hoist decorators
   api.decorators = (...decs) => { decorators = decs }
+
+  // Add lifecycle methods
+  api.on = (name, method) => {
+    lifecycleMethods[name] = function () { method(this) }
+  }
 
   // API to declare styles for convenient dot notation access in render,
   // e.g. comp.styles({ mainHeader: }); ... header('.mainHeader')
