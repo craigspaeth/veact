@@ -1,6 +1,6 @@
 {
   "name": "veact",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An un-fancy way to build React views",
   "main": "index.js",
   "scripts": {

@@ -26,4 +26,10 @@ describe('veact', () => {
     view.render(() => div('.div', 'Hello World'))
     render().should.containEql('red')
   })
+
+  it('accepts array children', () => {
+    view.render(() => div([div('foo'), div('bar')]))
+    render().should.containEql('foo')
+    render().should.containEql('bar')
+  })
 })

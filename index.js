@@ -6,7 +6,8 @@ const {
   isString,
   get,
   isEmpty,
-  flow
+  flow,
+  isArray
 } = require('lodash')
 
 //
@@ -18,6 +19,7 @@ const elAPI = (...args) => {
   let els = []
   // tag(els...)
   if (React.isValidElement(args[0]) ||
+      isArray(args[0]) && React.isValidElement(args[0][0]) ||
       isString(args[0]) && !args[0].match(/^\./)) {
     els = args
   // tag('.style', [props], els...)
