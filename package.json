@@ -1,6 +1,6 @@
 {
   "name": "veact",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "An un-fancy way to build React views",
   "main": "index.js",
   "scripts": {
@@ -24,15 +24,12 @@
   },
   "homepage": "https://github.com/craigspaeth/veact#readme",
   "dependencies": {
-    "lodash": "^4.14.1"
-  },
-  "peerDependencies": {
-    "react": "^15.3.0"
+    "lodash": "^4.14.1",
+    "react": "^15.4.2"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
     "mocha": "^3.0.2",
-    "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "should": "^11.1.0",
     "sinon": "^1.17.5",
